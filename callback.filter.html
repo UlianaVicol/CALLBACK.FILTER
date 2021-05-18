@@ -1,0 +1,25 @@
+<script>
+  const payments = [
+    { amount: 100.00, currency: "USD" },
+    { amount:  50.00, currency: "EUR" },
+    { amount:  10.00, currency: "USD" },
+    { amount:  25.00, currency: "EUR" },
+    { amount:   5.00, currency: "USD" },
+  ]
+  // i. Utilizand metoda Array.filter( callback ) - sa se filtreze valorile in EUR 
+  //                                                (sa ramana doar sumele in USD)
+
+      let value = payments.filter(value => value.currency == "USD")
+        console.log(" 1 ", value)
+
+  // ii. Utilizand metoda Array.forEach( callback ) - sa se afiseze sumele ramase in consola
+    
+      value.forEach(suma => console.log(" 2 ", suma.amount))
+
+  // iii. Utilizand metoda Array.reduce( callback ) - sa se calculeze suma totala formata din toate transele in valuta USD
+  //                                                  (prin acumulare)
+
+      let suma = value.reduce((accumulator, currentValue) => accumulator + currentValue.amount, 0)
+        console.log(" 3 ", suma)
+
+  </script>
